@@ -4,6 +4,7 @@ from django.http import HttpRequest
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from my_app.forms import AddressForm
 from my_app.models import Address, STATES_CHOICES
 
 
@@ -43,9 +44,9 @@ def address_list(request):
 @login_required(login_url='/login')
 def address_create(request):
     states = STATES_CHOICES
-
+    form = AddressForm
     if request.method == 'GET':
-        return render(request, 'my_app/address/create.html', {'states': states})
+        return render(request, 'my_app/address/create.html', {'form': form})
 
     Address.objects.create(
         address=request.POST.get('address'),

@@ -8,7 +8,8 @@
     <div class="container">
         <h3>Novo endereço</h3>
         <form action="/addresses/create" method="post">
-            {%  include 'my_app/address/form.html' %}
+           {{ form }}
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
 
     </div>
