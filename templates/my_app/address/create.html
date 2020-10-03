@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Novo endereço
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h3>Novo endereço</h3>
+        <form action="/addresses/create" method="post">
+            {%  include 'my_app/address/form.html' %}
+        </form>
+
+    </div>
+{% endblock %}
